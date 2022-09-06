@@ -21,6 +21,7 @@ type FileInput struct {
 
 func main()  {
   
+	port := os.Getenv("PORT")
 
 	server := gin.Default()
 	server.Static("/public","./public")
@@ -88,6 +89,6 @@ func main()  {
 		})
 	})
 
-	server.Run(":4000")
+	server.Run(port)
 	fmt.Println("Server is running on port 4000 ")
 }
